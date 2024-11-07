@@ -1,3 +1,4 @@
+
 import datetime
 import difflib
 import re
@@ -1311,6 +1312,20 @@ for i in files_path:
 	if file_type.suffix == '.jpg':
 
 		filling_mindee_xml(os.path.join(os.getcwd() +'/invoices/'+i), os.path.join(os.getcwd() +'/isdoc/'+new_file_name))
+
+exit_app = st.sidebar.button("Shut Down")
+if exit_app:
+  import keyboard
+  st.write('Shut down')
+
+  # Give a bit of delay for user experience
+  time.sleep(5)
+    # Close streamlit browser tab
+   # Close streamlit browser tab
+  keyboard.press_and_release('ctrl+w')
+  pid = os.getpid()
+  p = psutil.Process(pid)
+  p.terminate()
 
 
 
